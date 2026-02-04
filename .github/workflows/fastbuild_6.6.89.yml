@@ -590,7 +590,6 @@ jobs:
           echo "CONFIG_MQ_IOSCHED_DEFAULT_ADIOS=y" >> ./common/arch/arm64/configs/gki_defconfig
 
       - name: 启用 LXC/Docker 支持
-        if: LXC/Docker_enable
         run: |
           cd kernel_workspace
           echo "正在启用 LXC/Docker 支持（仅启用图中缺失的部分）..."
