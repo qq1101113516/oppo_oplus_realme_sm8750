@@ -919,4 +919,4 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            release_zips/AnyKernel3_*.zip
+            release_zips/AnyKernel3_*.zi
