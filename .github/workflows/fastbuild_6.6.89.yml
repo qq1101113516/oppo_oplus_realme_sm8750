@@ -632,23 +632,23 @@ jobs:
         run: |
           cd kernel_workspace
           echo "正在启用 LXC/Docker 支持（仅启用图中缺失的部分）..."
-          # 核心 cgroup 控制器
+          # 核心 cgroup 控制器（图片中缺失的 cpu, cpuset, io, memory, pids）
           echo "CONFIG_CGROUP_CPUACCT=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CPUSETS=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_BLK_CGROUP=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_MEMCG=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CGROUP_PIDS=y" >> ./common/arch/arm64/configs/gki_defconfig
-          # 其他 cgroup 相关
+          # 其他 cgroup 相关（图片中缺失的）
           echo "CONFIG_CGROUP_PERF=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CGROUP_HUGETLB=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NET_CLS_CGROUP=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CFS_BANDWIDTH=y" >> ./common/arch/arm64/configs/gki_defconfig
-          # 网络相关
+          # 网络相关（图片中缺失的 BRIDGE_NETFILTER, IP6_NF_TARGET_MASQUERADE 等）
           echo "CONFIG_BRIDGE_NETFILTER=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_IP6_NF_TARGET_MASQUERADE=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NETFILTER_XT_MATCH_ADDRTYPE=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NETFILTER_XT_MATCH_IPVS=y" >> ./common/arch/arm64/configs/gki_defconfig
-          # NFT 相关
+          # NFT 相关（图片中缺失的）
           echo "CONFIG_NF_TABLES=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NFT_CT=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NFT_FIB_IPV4=y" >> ./common/arch/arm64/configs/gki_defconfig
@@ -656,12 +656,12 @@ jobs:
           echo "CONFIG_NFT_FIB=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NFT_MASQ=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_NFT_NAT=y" >> ./common/arch/arm64/configs/gki_defconfig
-          # 网络驱动相关
+          # 网络驱动相关（图片中缺失的 VXLAN, BRIDGE_VLAN_FILTERING, IPVLAN, MACVLAN）
           echo "CONFIG_VXLAN=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_BRIDGE_VLAN_FILTERING=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_IPVLAN=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_MACVLAN=y" >> ./common/arch/arm64/configs/gki_defconfig
-          # 其他可选
+          # 其他可选（图片中缺失的 IP_VS 等）
           echo "CONFIG_IP_VS=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_IP_VS_NFCT=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_IP_VS_PROTO_TCP=y" >> ./common/arch/arm64/configs/gki_defconfig
